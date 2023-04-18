@@ -27,6 +27,11 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+  //handling the create part
+  handleCreate(){
+  //routing to edit page
+  this.router.navigate(['/incidents/create']);
+  }
   //handling the edit part
   handleEdit(value:Incident){
     //routing to edit page

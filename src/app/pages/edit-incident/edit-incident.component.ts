@@ -18,6 +18,12 @@ export class EditIncidentComponent implements OnInit {
     this.incidentData=this.incidentService.getSelectedIncident();
     this.title = this.route.snapshot.data['title'];
   }
+
+  //handle Cancel event
+  handleCancel(){
+    this.router.navigate(['/incidents']);
+    }
+    
   title!: string;
 
   formBuilder: FormBuilder = new FormBuilder;

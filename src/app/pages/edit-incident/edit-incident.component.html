@@ -54,7 +54,7 @@
                 <textarea rows="4" class="form-control" id="descriptiontf" placeholder="Incident description" formControlName="description" required></textarea>
               </div><br/>
               <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
-                  <a href="/incidents" class="btn btn-warning ms-2"><i class="fa fa-undo"></i> Cancel</a>
+                  <span (click)="handleCancel()" class="btn btn-warning ms-2"><i class="fa fa-undo"></i> Cancel</span>
             </div>
           </div>
         </form>
