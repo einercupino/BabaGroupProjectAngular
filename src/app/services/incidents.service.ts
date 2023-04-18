@@ -7,7 +7,7 @@ import { Incident } from '../Model/incident.model';
   providedIn: 'root'
 })
 export class IncidentsService {
-  apiUrlExpress= 'https://bbgincbackend.azurewebsites.net/';      //TODO
+  apiUrlExpress= 'https://bbgincbackend.azurewebsites.net/';      //TODO need to change this to the actual url
   selectedIncident!: Incident;
 
   constructor(private http:HttpClient){
