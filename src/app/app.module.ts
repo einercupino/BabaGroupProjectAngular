@@ -12,6 +12,7 @@ import { AddIncidentsComponent } from './pages/add-incidents/add-incidents.compo
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorInterceptor } from './Interceptors/auth-interceptor.interceptor';
 import { EditIncidentComponent } from './pages/edit-incident/edit-incident.component';
+import { ComponentNameComponent } from './component-name/component-name.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditIncidentComponent } from './pages/edit-incident/edit-incident.compo
     LoginComponent,
     RegisterComponent,
     AddIncidentsComponent,
-    EditIncidentComponent
+    EditIncidentComponent,
+    ComponentNameComponent
   ],
   imports: [
     BrowserModule,
