@@ -27,7 +27,20 @@ export class AddIncidentsComponent implements OnInit {
   //submitting the form to add incident data
   public submit() {
     console.log("New Incident data: ",this.incidentForm.value);
-    this.incidentService.addIncidents(this.incidentForm.value)
+
+    const payload={
+      state:this.incidentForm.value.state,
+      priority: this.incidentForm.value.priority,
+      type:this.incidentForm.value.type,
+      custname:this.incidentForm.value.customerName,
+      custcontact:this.incidentForm.value.customerContact,
+      createdby:this.incidentForm.value.createdBy,
+      resolved:new Date(),
+      resolvedby:this.incidentForm.value.createdBy,
+      description:this.incidentForm.value.description
+    }
+
+    this.incidentService.addIncidents(payload)
     .subscribe(
       (res)=>{
         console.log("Incident data: ",res);

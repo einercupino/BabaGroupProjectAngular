@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
     this.incidentService.deleteIncident(id)
     .subscribe(
       (res)=>{
-        console.log("dEleted..");
+        console.log("deleted..");
         //reloading the page
         this.ngOnInit();
       },
@@ -53,4 +53,6 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+
+ 
 }

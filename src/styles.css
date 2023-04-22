@@ -21,10 +21,68 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   /* Custom CSS goes here */
 body {
     padding-bottom: 70px;
+    background-color: darkslategrey;
 }
+
+.custom-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 25%;
+    margin: 0 auto;
+}
+
+.fa-stack {
+    font-size: 14px;
+  }
+
+  .create-button {
+    font-size: 14px; 
+    background-color: darkslategrey;
+    border-color: darkslategrey;
+    color: whitesmoke;
+  }
+
+  .create-button:hover {
+    font-size: 14px; 
+    background-color: green;
+    border-color: green;
+    color: whitesmoke;
+  }
+
+  .update-button {
+    font-size: 14px; 
+    background-color: darkslategrey;
+    border-color: darkslategrey;
+    color: whitesmoke;
+  }
+
+  .update-button:hover {
+    background-color: goldenrod;
+    border-color: goldenrod;
+    color: white;
+  }
+
+  .delete-button {
+    font-size: 14px; 
+    background-color: darkgray;
+    border-color:darkgray;
+    color: whitesmoke;
+  }
+
+h2.mt-5 {
+    color: whitesmoke;
+}
+
 
 table,input,textarea{
     font-size: 13px !important;
+    background-color: whitesmoke;
 }
 
 .navbar {
