@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IncidentsService } from 'src/app/services/incidents.service';
 import { Incident } from 'src/app/Model/incident.model';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,16 +12,18 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   incidents: Incident[] = [];
   
-  constructor(private incidentService:IncidentsService,private router:Router) { }
+  constructor(private incidentService:IncidentsService,private router:Router,private auth:AuthService) { }
 
   ngOnInit(): void {
+    const myGroup= this.auth.getUserGroup();
     //getting the incidents list on loading
     this.incidentService.getIncidents()
     .subscribe(
       (res)=>{
         //saving response to local state
-        console.log("Incident data: ",res);
-        this.incidents= res;
+        const filtered= res.filter((value:any)=>value.custcontact===myGroup);
+        this.incidents= filtered;
+
       },
       (err)=>{
         console.log("Fetcing data error : ",err);

@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.form.value.username,this.form.value.password)
     .subscribe((response)=>{
         this.authError=false;
+        console.log(response);
         this.auth.setLocalStorage(response);
         this.auth.setUserData(response);
         this.router.navigate(['/incidents']);
@@ -59,5 +60,9 @@ export class LoginComponent implements OnInit {
   onReset(): void {
     this.submitted = false;
     this.form.reset();
+  }
+
+  handleBack(){
+    this.router.navigate(['/register']);
   }
 }

@@ -30,11 +30,13 @@ export class AuthService{
 
     setUserData(responseObj:any){
         localStorage.setItem('displayName',responseObj.user.displayName);
+        localStorage.setItem('userGroup',responseObj.user.group);
     }
 
     logout(){
         localStorage.removeItem('token');
         localStorage.removeItem('displayName');
+        localStorage.removeItem('userGroup');
     }
 
     getToken(){
@@ -44,6 +46,10 @@ export class AuthService{
     getDisplayName(){
         return localStorage.getItem('displayName');
     }
+
+    getUserGroup(){
+        return localStorage.getItem('userGroup');
+    }
 
     isLoggedOut(){
         return !this.getToken();

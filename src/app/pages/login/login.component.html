@@ -28,7 +28,7 @@
         id='password' required autocomplete='off'>
         <small *ngIf="submitted && loginForm['password'].errors" class="p-error">Please enter a valid password!</small>
         <br/>
-        <span class="small">or <a href="/register" class="link-primary">Register Here</a></span>
+        <span class="small">or <span (click)="handleBack()" class="link-primary"><kbd>Register Here</kbd></span></span>
       </fieldset>
 
       <br/>

@@ -15,7 +15,10 @@ export class RegisterComponent implements OnInit {
     password: new FormControl(''),
     email: new FormControl(''),
     displayName: new FormControl(''),
+    group: new FormControl('')
   });
+
+  
 
   submitted = false;
   authError= false;
@@ -29,7 +32,8 @@ export class RegisterComponent implements OnInit {
       username: ['',Validators.required],
       password: ['',Validators.required],
       email: ['',Validators.email],
-      displayName: ['',Validators.required]
+      displayName: ['',Validators.required],
+      group:['',Validators.required]
     })
   }
   ///
