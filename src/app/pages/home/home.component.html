@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col col-xl-12">
-      <h2 class="mt-5">All Incidents </h2>
+      <h2 class="mt-5" *ngIf="getGroup()">All incidents assigned to <kbd>{{displayGroup}}</kbd></h2>
       <div class="text-end">
       <span (click)="handleCreate()" class="btn btn-primary create-button"><i class="fa fa-plus"></i> Create Incident</span></div>
       <br>

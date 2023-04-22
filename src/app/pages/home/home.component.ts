@@ -11,7 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HomeComponent implements OnInit {
   incidents: Incident[] = [];
-  
+  displayGroup!: string | null;
+
   constructor(private incidentService:IncidentsService,private router:Router,private auth:AuthService) { }
 
   ngOnInit(): void {
@@ -57,5 +58,12 @@ export class HomeComponent implements OnInit {
     )
   }
 
- 
+  getGroup(){
+    if(this.auth.getUserGroup()){
+      this.displayGroup= this.auth.getUserGroup();
+      return true;
+    }
+    return false;
+  }
+
 }
